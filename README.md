@@ -17,10 +17,19 @@ Search for dependencies inside a compiled rust executable, download them and cre
 # Install
 
 ```bash
+- This python version downloaded: https://www.python.org/ftp/python/3.13.9/python-3.13.9-amd64.exe
 git clone https://github.com/N0fix/rustbinsign
 cd rustbinsign
-poetry install
+Powershell: (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | C:\Python310\python.exe -
+# find where poetry.exe located and put arg install.
+poetry.exe install
 rustbinsign --help
+
+# Binary located: C:\Users\<user>\AppData\Local\pypoetry\Cache\virtualenvs\rustbinsign-UL8GH7bH-py3.13\Scripts
+$ rustbininfo.exe -h
+$ rustbininfo.exe -f "<rust binary.exe>"
+
+# Need network connection to receive output from the binary.
 ```
 
 # Help
